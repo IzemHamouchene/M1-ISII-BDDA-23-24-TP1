@@ -1,0 +1,22 @@
+    name: Classroom Workflow
+
+    on: 
+      push:
+        branches:
+        - '*'
+        
+    jobs:
+      build:
+        name: Autograding
+        runs-on: ubuntu-latest
+        steps:
+          - uses: actions/checkout@v2
+          # start SQL Server
+          - name: setup SQL Server instance
+            run: docker run -v $(pwd):/app -e 'ACCEPT_EULA=Y' -e 'SA_PASSWORD=Pa$$w0rd1234' -p 1433:1433 --name sql2017 -d mcr.microsoft.com/mssql/server:2017-latest || sleep 900
+
+          # start tests
+          - name: check autograder pass fail
+            uses: education/autograding@v1
+            id: autograder
+            continue-on-error: false

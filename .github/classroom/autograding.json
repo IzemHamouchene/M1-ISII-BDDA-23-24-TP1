@@ -1,0 +1,94 @@
+{
+  "tests": [
+    {
+      "name": "Check create Database",
+      "setup": "",
+      "run": "docker exec sql2017 /opt/mssql-tools/bin/sqlcmd -S localhost -U sa -P Pa\\$\\$w0rd1234 -d master -i /app/create-database.sql",
+      "input": "",
+      "output": "",
+      "comparison": "included",
+      "timeout": 10,
+      "points": 10
+    },
+    {
+      "name": "Check Users",
+      "setup": "",
+      "run": "docker exec sql2017 /opt/mssql-tools/bin/sqlcmd -S localhost -U sa -P Pa\\$\\$w0rd1234 -d master -i /app/query.sql",
+      "input": "",
+      "output": "Tom",
+      "comparison": "included",
+      "timeout": 10,
+      "points": 10
+    },
+    {
+      "name": "Check database Commerce2 exists",
+      "setup": "",
+      "run": "docker exec sql2017 /opt/mssql-tools/bin/sqlcmd -S localhost -U sa -P Pa\\$\\$w0rd1234 -Q \"SELECT NAME FROM sys.sysdatabases\"",
+      "input": "",
+      "output": "Commerce2",
+      "comparison": "included",
+      "timeout": 10,
+      "points": 10
+    },
+    {
+      "name": "Check Client table exists",
+      "setup": "",
+      "run": "docker exec sql2017 /opt/mssql-tools/bin/sqlcmd -S localhost -U sa -P Pa\\$\\$w0rd1234 -Q \"SELECT TABLE_NAME FROM Commerce2.INFORMATION_SCHEMA.TABLES WHERE TABLE_TYPE = 'BASE TABLE'\"",
+      "input": "",
+      "output": "clients",
+      "comparison": "included",
+      "timeout": 10,
+      "points": 10
+    },
+    {
+      "name": "Check ClientID exists in customers table",
+      "setup": "",
+      "run": "docker exec sql2017 /opt/mssql-tools/bin/sqlcmd -S localhost -U sa -P Pa\\$\\$w0rd1234 -Q \"USE Commerce2 SELECT COLUMN_NAME FROM INFORMATION_SCHEMA.COLUMNS WHERE TABLE_NAME = 'clients'\"",
+      "input": "",
+      "output": "Nom",
+      "comparison": "included",
+      "timeout": 10,
+      "points": 10
+    },
+    {
+      "name": "Check ClientID data type INT",
+      "setup": "",
+      "run": "docker exec sql2017 /opt/mssql-tools/bin/sqlcmd -S localhost -U sa -P Pa\\$\\$w0rd1234 -Q \"USE Commerce2 SELECT DATA_TYPE FROM INFORMATION_SCHEMA.COLUMNS WHERE TABLE_NAME = 'Clients' AND COLUMN_NAME = 'ClientID'\"",
+      "input": "",
+      "output": "int",
+      "comparison": "included",
+      "timeout": 10,
+      "points": 10
+    },
+    {
+      "name": "Check Nom exists in Clients table",
+      "setup": "",
+      "run": "docker exec sql2017 /opt/mssql-tools/bin/sqlcmd -S localhost -U sa -P Pa\\$\\$w0rd1234 -Q \"USE Commerce2 SELECT COLUMN_NAME FROM INFORMATION_SCHEMA.COLUMNS WHERE TABLE_NAME = 'clients'\"",
+      "input": "",
+      "output": "ClientID",
+      "comparison": "included",
+      "timeout": 10,
+      "points": 10
+    },
+    {
+      "name": "Check QUERY",
+      "setup": "",
+      "run": "docker exec sql2017 /opt/mssql-tools/bin/sqlcmd -S localhost -U sa -P Pa\\$\\$w0rd1234 -Q \"USE Commerce2 SELECT Nom FROM Clients WHERE ClientId = 1\"",
+      "input": "",
+      "output": "Tom",
+      "comparison": "included",
+      "timeout": 10,
+      "points": 10
+    },
+    {
+      "name": "Check Commande Query",
+      "setup": "",
+      "run": "docker exec sql2017 /opt/mssql-tools/bin/sqlcmd -S localhost -U sa -P Pa\\$\\$w0rd1234 -Q \"USE Commerce2 SELECT NumCommande FROM Commandes WHERE ClientID_C = 1\"",
+      "input": "",
+      "output": "1",
+      "comparison": "included",
+      "timeout": 10,
+      "points": 10
+    }  
+  ]
+}
