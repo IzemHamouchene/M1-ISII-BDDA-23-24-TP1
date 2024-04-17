@@ -32,8 +32,8 @@ Write the following SQL queries into _1_create_database.sql_
 
 Write the following SQL queries into _2_insert_data.sql_
 1. Insert two teachers
-   * (1,sofian,family1,123,s_f3@gmail.com)
-   * (2,yacin,family2,456,y_f4@gmail.com)
+   * (1,sofian,family1,123,`s_f3@gmail.com`)
+   * (2,yacin,family2,456,`y_f4@gmail.com`)
 2. Insert two students
    * (1,mohamed,family3,123)
    * (2,youcef,family4,456)
