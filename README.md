@@ -1,7 +1,5 @@
 # TP 1 : Simple DB manipulation
 
-![GitHub Classroom Workflow](../../workflows/GitHub%20Classroom%20Workflow/badge.svg?branch=master) ![Points badge](../../blob/badges/.github/badges/points.svg)
-
 In this exercise, you will write SQL queries that create a database, tables and insert simple Data.
 
 ## Exercise 1 : Create the Database
