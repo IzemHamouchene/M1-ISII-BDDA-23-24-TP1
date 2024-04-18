@@ -22,9 +22,9 @@ Write the following SQL queries into _1_create_database.sql_
     * Name NVARCHAR (30)
 5. Create Table named **CoursTeacher** with the following attribute
     * ID Type Integer (Primary Key)
-    * IdCour INT
-    * IdTeacher INT
-    * IdStudent INT
+    * IdCour INT (FOREIGN KEY)
+    * IdTeacher INT (FOREIGN KEY)
+    * IdStudent INT (FOREIGN KEY)
     * DayWeek NVARCHAR(30) _should accept only these values : 'Sunday', 'Monday', 'Tuesday' , 'Wednesday' , 'Thursday'_
     * StartHour INT
 
