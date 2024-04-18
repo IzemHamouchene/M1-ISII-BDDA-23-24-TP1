@@ -3,7 +3,7 @@
 In this exercise, you will write SQL queries that create a database, tables and insert simple Data.
 
 Diagram : <br/>
-![diagram](<diagram.png>)
+![diagram](<assets/diagram.png>)
 
 ## Exercise 1 : Create the Database
 
