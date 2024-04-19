@@ -10,21 +10,21 @@ Diagram : <br/>
 Write the following SQL queries into _1_create_database.sql_
 1. Create a Database named **UniversityDB**
 2. Create Table named **teacher** with the following attribute
-    * ID Type Integer (Primary Key)
+    * ID Type Integer (Primary Key) auto increment
     * FirstName NVARCHAR (30)
     * LastName NVARCHAR (30)
     * Phone INT
     * Email NVARCHAR (255)
 3. Create Table named **student** with the following attribute
-    * ID Type Integer (Primary Key)
+    * ID Type Integer (Primary Key) auto increment
     * FirstName NVARCHAR (30)
     * LastName NVARCHAR (30)
     * Phone INT
 4. Create Table named **Cours** with the following attribute
-    * ID Type Integer (Primary Key)
+    * ID Type Integer (Primary Key) auto increment
     * Name NVARCHAR (30)
 5. Create Table named **CoursTeacher** with the following attribute
-    * ID Type Integer (Primary Key)
+    * IDCoursTeacher Type Integer (Primary Key) auto increment
     * IdCour INT (FOREIGN KEY)
     * IdTeacher INT (FOREIGN KEY)
     * IdStudent INT (FOREIGN KEY)
