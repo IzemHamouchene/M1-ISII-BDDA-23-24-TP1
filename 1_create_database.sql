@@ -5,7 +5,7 @@ create database UniversityDB
 
 
 
--- Use the UniversityDB by the SQL command : USE UniversityDB 
+-- Use the UniversityDB Database
 USE UniversityDB
 GO
 -- Create the table teacher 
