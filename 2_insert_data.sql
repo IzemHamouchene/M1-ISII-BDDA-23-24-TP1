@@ -1,9 +1,6 @@
--- Use the UniversityDB Database
-
-
+USE UniversityDB
 GO
 -- Insert teacher Data
-
 
 
   
