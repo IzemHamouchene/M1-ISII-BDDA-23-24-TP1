@@ -4,9 +4,10 @@
 create database UniversityDB
 
 
-GO
+
 -- Use the UniversityDB by the SQL command : USE UniversityDB 
 USE UniversityDB
+GO
 -- Create the table teacher 
 CREATE TABLE teacher (
     ID INT PRIMARY KEY IDENTITY(1,1),
