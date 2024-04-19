@@ -145,9 +145,9 @@
     {
       "name": "Check if the coursTeacher '2,1,Thursday,9' has been inserted",
       "setup": "",
-      "run": "docker exec sql2017 /opt/mssql-tools/bin/sqlcmd -S localhost -U sa -P Pa\\$\\$w0rd1234 -Q \"USE UniversityDB SELECT IdCoursTeacher FROM coursTeacher WHERE IdCoursTeacher = 3\"",
+      "run": "docker exec sql2017 /opt/mssql-tools/bin/sqlcmd -S localhost -U sa -P Pa\\$\\$w0rd1234 -Q \"USE UniversityDB SELECT DayWeek FROM coursTeacher WHERE IdCoursTeacher = 3\"",
       "input": "",
-      "output": "3",
+      "output": "Thursday",
       "comparison": "included",
       "timeout": 10,
       "points": 1
