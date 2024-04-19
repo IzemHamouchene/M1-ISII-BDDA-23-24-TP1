@@ -6,8 +6,9 @@ create database UniversityDB
 
 
 -- Use the UniversityDB Database
-USE UniversityDB
 GO
+USE UniversityDB
+
 -- Create the table teacher 
 CREATE TABLE teacher (
     ID INT PRIMARY KEY IDENTITY(1,1),
